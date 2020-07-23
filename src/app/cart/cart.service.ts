@@ -7,8 +7,8 @@ import { AuthService } from '../auth.service';
 })
 export class CartService {
 
-  private _cartUrl="localhost:3000/user/cart";
-  private _addToOrders = 'localhost:3000/user/addtoorders';
+  private _cartUrl="https://ecommdemoo.herokuapp.com//user/cart";
+  private _addToOrders = 'https://ecommdemoo.herokuapp.com//user/addtoorders';
   constructor(private http:HttpClient,
     private _authService: AuthService) { }
 

@@ -3,7 +3,6 @@ const bodyparser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 
-const PORT = process.env.PORT || 3000;
 // console.log(PORT)
 const userApi =  require('./routes/user');
 const productsApi =  require('./routes/products');
@@ -24,4 +23,5 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/ecommerce/index.html'));
   });
 // default Heroku PORT
-app.listen(PORT);  
+const port = process.env.PORT || 3000;
+app.listen(port);  
