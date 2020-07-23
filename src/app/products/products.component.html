@@ -1,0 +1,29 @@
+<!-- <div *ngFor="let product of productsList">
+    <a (click)=openDetail($event)>{{product}}</a>
+</div>
+
+<div *ngIf="isDisplay">
+    <app-product-display [product]='productName'></app-product-display>
+</div> -->
+
+<!-- <div class="list-group" *ngFor="let product of productsList">
+    <a class="list-group-item list-group-item-action" (click)=openDetail($event)>{{product}}</a>
+</div>  -->
+
+<!-- <div class="container"> -->
+    <div class="row pt-5">
+        <div class="col-sm-3">
+            <div class="list-group" *ngFor="let product of category">
+                <a class="list-group-item list-group-item-action" (click)=openDetail($event)>{{product|uppercase}}
+                </a>
+
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <!-- <div *ngIf="isDisplay"> -->
+            <div>
+                <app-product-display [product]='categoryName | lowercase'></app-product-display>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

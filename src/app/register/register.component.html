@@ -1,0 +1,90 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0">Register</h3>
+            </div>
+            <div class="card-body">
+                <form #userForm="ngForm" (ngSubmit)="registerUser()">
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input #name='ngModel' [(ngModel)]='userData.name'  name="name" [class.is-invalid]='name.invalid && name.touched' id="name" type="text" class="form-control rounded-0" required>
+                        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input #email='ngModel' [(ngModel)]='userData.email' pattern="^\w[a-zA-Z0-9._]+@\w+[.]\w{4}$"  name="email" id="email" type="email"  class="form-control rounded-0" required>
+                        
+                        <!-- 
+                            [class.is-invalid]="email.touched && email.invalid" {{email.dirty}} -->
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input [(ngModel)]='userData.password' name="password" id="password" type="password" class="form-control rounded-0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input #phone='ngModel' [(ngModel)]='userData.phone' pattern="^[6-9]{1}\d{9}$" [class.is-invalid]="phone.invalid && phone.touched" name="phone" id="phone" type="tel" class="form-control rounded-0" required>
+                        <!-- <div *ngIf="phone.errors &&  (phone.invalid || phone.touched)">
+                            <small class="text-danger" *ngIf="phone.errors.required">Phone number is required</small>
+                            <small class="text-danger" *ngIf="phone.errors.pattern">Enter valid phone number</small>
+                        </div> -->
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="street">Address <br> Street</label>
+                        <input ngModel name="street" id="street" type="text" class="form-control rounded-0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input ngModel name="city" id="city" type="text" class="form-control rounded-0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input ngModel name="state" id="state" type="text" class="form-control rounded-0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input ngModel name="country" id="country" type="text" class="form-control rounded-0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pincode">Pin Code</label>
+                        <input ngModel name="pincode" id="pincode" type="number" class="form-control rounded-0" required>
+                    </div> -->
+                    
+                    <div ngModelGroup="address">
+                        <div class="form-group">
+                            <label for="street"><br> Address: <br> Street</label>
+                            <input [(ngModel)]='userData.address.street' name="street" id="street" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input [(ngModel)]='userData.address.city' name="city" id="city" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input [(ngModel)]='userData.address.state' name="state" id="state" type="text" class="form-control rounded-0" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input [(ngModel)]='userData.address.country' name="country" id="country" type="text" class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pin Code</label>
+                            <input [(ngModel)]='userData.address.pincode' name="pincode" id="pincode" type="number" class="form-control rounded-0" required>
+                        </div>
+                    </div>
+                    
+                    <button  type="submit" class="btn btn-primary float-right">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
