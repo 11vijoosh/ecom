@@ -53,8 +53,8 @@
     "typescript": "~3.7.5"
   },
   "engines": {
-    "node" : "~12.16.1",
-    "npm" : "~6.13.4"
+    "node": "~12.16.1",
+    "npm": "~6.13.4"
   },
   "description": "",
   "main": "index.js",
