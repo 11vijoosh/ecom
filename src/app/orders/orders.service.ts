@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrdersService {
-  private _ordersUrl="https://ecommdemoo.herokuapp.com//user/orders";
+  private _ordersUrl="http://localhost:3000/user/orders";
 
   constructor(private http:HttpClient) { }
 
