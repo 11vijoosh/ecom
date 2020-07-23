@@ -8,9 +8,9 @@ import { AuthService } from "../auth.service";
 })
 export class ProductDisplayService {
 
-  private _productsUrl = 'http://localhost:3000/products/products';
-  private _addToCart = 'http://localhost:3000/user/addtocart';
-  private _removeFromCart= 'http://localhost:3000/user/removefromcart';
+  private _productsUrl = 'localhost:3000/products/products';
+  private _addToCart = 'localhost:3000/user/addtocart';
+  private _removeFromCart= 'localhost:3000/user/removefromcart';
   constructor(private http:HttpClient,
     private _authService: AuthService) { }
 

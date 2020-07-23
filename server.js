@@ -24,5 +24,4 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/ecommerce/index.html'));
   });
 // default Heroku PORT
-app.listen(3000);  
-module.exports = { PORTNUMBER: PORT };
+app.listen(PORT);  
