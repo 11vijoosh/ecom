@@ -7,8 +7,8 @@ import { AuthService } from '../auth.service';
 })
 export class CartService {
 
-  private _cartUrl="http://localhost:3000/user/cart";
-  private _addToOrders = 'http://localhost:3000/user/addtoorders';
+  private _cartUrl="/user/cart";
+  private _addToOrders = '/user/addtoorders';
   constructor(private http:HttpClient,
     private _authService: AuthService) { }
 
